@@ -3,7 +3,7 @@ opipeline {
     stages {
         stage('build') {
             steps {
-                sh 'whoami'
+                echo 'Build step started'
             }
         }
     }
