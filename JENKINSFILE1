@@ -4,6 +4,8 @@ pipeline {
         stage('build') {
             steps {
                 echo 'Build step started'
+                cd /Users/ryacu/AnypointStudio/irs/irs-taxpayer-papi
+                mvn clean package
             }
         }
     }
