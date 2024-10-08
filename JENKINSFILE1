@@ -8,9 +8,7 @@ pipeline {
 
                         sh '''
                         cd /Users/ryacu/AnypointStudio/irs/irs-taxpayer-papi
-                        withMaven {
-                            mvn clean package
-                        }
+                        mvn clean package
                         sh '''
                     } catch ( Exception e ) {
                         echo 'Exception occurred: ' + e.toString()
