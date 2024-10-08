@@ -5,7 +5,6 @@ pipeline {
             steps {
                 script {
                     try {
-
                         sh '''
                         source /Users/ryacu/.zprofile
                         echo $PATH
@@ -23,6 +22,9 @@ pipeline {
                     try {
 
                         sh '''
+                        source /Users/ryacu/.zprofile
+                        echo $PATH
+                        cd /Users/ryacu/AnypointStudio/irs/irs-taxpayer-papi
                         mvn clean package -DskipTests
                         sh '''
                     } catch ( Exception e ) {
