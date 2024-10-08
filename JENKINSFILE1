@@ -25,7 +25,7 @@ pipeline {
                         source /Users/ryacu/.zprofile
                         echo $PATH
                         cd /Users/ryacu/AnypointStudio/irs/irs-taxpayer-papi
-                        mvn clean package -DskipTests
+                        mvn clean deploy -DmuleDeploy -DskipTests -Dmule.version=4.7.0 -Danypoint.username=raad010 -Danypoint.password=Hello2024$$ -Denv=dev =Dappname=api01 -Dbusiness=Salesforce   
                         sh '''
                     } catch ( Exception e ) {
                         echo 'Exception occurred: ' + e.toString()
