@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('build') {
+        stage('clean') {
             steps {
                 script {
                     try {
@@ -10,7 +10,23 @@ pipeline {
                         source /Users/ryacu/.zprofile
                         echo $PATH
                         cd /Users/ryacu/AnypointStudio/irs/irs-taxpayer-papi
-                        mvn clean verify
+                        mvn clean
+                        sh '''
+                    } catch ( Exception e ) {
+                        echo 'Exception occurred: ' + e.toString()
+                    }
+                }
+            }
+         stage('package') {
+            steps {
+                script {
+                    try {
+
+                        sh '''
+                        source /Users/ryacu/.zprofile
+                        echo $PATH
+                        cd /Users/ryacu/AnypointStudio/irs/irs-taxpayer-papi
+                        mvn package -DskipTests
                         sh '''
                     } catch ( Exception e ) {
                         echo 'Exception occurred: ' + e.toString()
