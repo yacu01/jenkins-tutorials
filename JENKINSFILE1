@@ -23,9 +23,6 @@ pipeline {
                     try {
 
                         sh '''
-                        source /Users/ryacu/.zprofile
-                        echo $PATH
-                        cd /Users/ryacu/AnypointStudio/irs/irs-taxpayer-papi
                         mvn package -DskipTests
                         sh '''
                     } catch ( Exception e ) {
