@@ -33,5 +33,18 @@ pipeline {
                 }
             }
         }
+        stage('deploy') {
+            steps {
+                script {
+                    try {
+                        sh ''' 
+                        echo Deploying ...
+                        sh '''
+                    } catch( Exception e) {
+                        echo 'Exception occurred: ' + e.toString()     
+                    }
+                }
+            }
+        }
     }
 }
