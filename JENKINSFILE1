@@ -1,4 +1,4 @@
-pipeline {
+fypipeline {
     agent any
     stages {
         stage('build') {
@@ -10,7 +10,7 @@ pipeline {
                         source /Users/ryacu/.zprofile
                         echo $PATH
                         cd /Users/ryacu/AnypointStudio/irs/irs-taxpayer-papi
-                        mvn clean package
+                        mvn clean verify
                         sh '''
                     } catch ( Exception e ) {
                         echo 'Exception occurred: ' + e.toString()
