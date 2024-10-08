@@ -7,7 +7,7 @@ pipeline {
                     try {
 
                         sh '''
-                        echo env
+                        echo $PATH
                         cd /Users/ryacu/AnypointStudio/irs/irs-taxpayer-papi
                         mvn clean package
                         sh '''
