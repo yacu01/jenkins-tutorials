@@ -39,7 +39,7 @@ pipeline {
                         echo Deploying ...
                         source /Users/ryacu/.zprofile
                         cd /Users/ryacu/AnypointStudio/irs/api01
-                        mvn deploy -DmuleDeploy -DskipTests -Danypoint.username=raad10 -Danypoint.password=Hello2024 -Denv=Sandbox -Dappname=api01 -Dbusiness=Salesforce   
+                        mvn deploy -DmuleDeploy -DskipTests -Dmule.version=4.8.0 -Danypoint.username=raad10 -Danypoint.password=Hello2024 -Denv=Sandbox -Dappname=api01 -Dbusiness=Salesforce   
                         sh '''
                     } catch( Exception e) {
                         echo 'Exception occurred: ' + e.toString()     
